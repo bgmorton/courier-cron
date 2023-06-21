@@ -1,8 +1,6 @@
 # Examples of Scheduling Courier Notifications in PHP
 
-This repository contains examples on how the [Courier communications platform](https://www.courier.com/) can be used with PHP for sending scheduled notifications.
-
-To see a step-by-step explanation of the contents, see the associated [tutorial](#).
+This repository contains examples on how the [Courier notification platform](https://www.courier.com/) can be used with PHP for sending scheduled notifications.
 
 ## Requirements
 
@@ -16,9 +14,9 @@ You can install all of this in your own project by running:
 
     composer require crunzphp/crunz vlucas/phpdotenv trycourier/courier guzzlehttp/guzzle
 
-Crunz is used for scheduling in this app, and it has it's own [extensive documentation](https://github.com/crunzphp/crunz). The most important bit is adding it to the [crontab](https://man7.org/linux/man-pages/man5/crontab.5.html) on your server - once this is done, all task handling is handled from within your PHP app, no need to add additional cron jobs:
+Crunz is used for scheduling in this app, and it has its own [extensive documentation](https://github.com/crunzphp/crunz). The most important bit is adding it to the [crontab](https://man7.org/linux/man-pages/man5/crontab.5.html) on your server - once this is done, all task handling is handled from within your PHP app, no need to add additional cron jobs:
 
-    * * * * * cd /project && vendor/bin/crunz schedule:run
+    * * * * * cd /path/to/project && vendor/bin/crunz schedule:run
 
 ## Tasks
 
@@ -36,7 +34,7 @@ For more about tasks, including calling external PHP functions and logging the r
 
 ## Courier
 
-This example app uses the Courier PHP SDK to send notifications.
+This example app uses the Courier PHP SDK to send notifications using Courier.
 
 The credentials for Courier must be supplied in the `.env` file which can be created by duplicating the template file:
 

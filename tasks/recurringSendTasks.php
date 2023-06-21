@@ -29,7 +29,7 @@ $task = $schedule->run(function () use ($courier) {
                 ],
                 "email" => $_ENV['TEST_EMAIL_TO']
             ],
-            "template" => $_ENV['TEST_SCHEDULED_SEND_TEMPLATE'],
+            "template" => $_ENV['TEST_DIRECT_SEND_NOTIFICATION_TEMPLATE_ID'],
             "routing" => [
                 "method" => "single",
                 "channels" => ["email"]

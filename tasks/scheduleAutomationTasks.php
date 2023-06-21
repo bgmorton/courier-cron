@@ -26,9 +26,9 @@ $task = $schedule->run(function () use ($courier) {
         "steps" => [
             [
                 "action" => "send",
-                "recipient" => $_ENV['TEST_AUTOMATION_RECIPIENT'],
-                "template" => $_ENV['TEST_AUTOMATION_TEMPLATE_1'],// Reminder email
-                "brand" => $_ENV['TEST_AUTOMATION_BRAND'],
+                "recipient" => $_ENV['TEST_AUTOMATION_RECIPIENT_USER_ID'],
+                "template" => $_ENV['TEST_AUTOMATION_NOTIFICATION_TEMPLATE_ID_1'],// Reminder email
+                "brand" => $_ENV['YOUR_COURIER_BRAND_ID'],
                 "data" => [
                     "name" => "Max Overdrive",
                 ]
@@ -40,8 +40,8 @@ $task = $schedule->run(function () use ($courier) {
             [
                 "action" => "send",
                 "recipient" => $_ENV['TEST_AUTOMATION_RECIPIENT'],
-                "template" => $_ENV['TEST_AUTOMATION_TEMPLATE_2'],// Follow-up email
-                "brand" => $_ENV['TEST_AUTOMATION_BRAND'],
+                "template" => $_ENV['TEST_AUTOMATION_NOTIFICATION_TEMPLATE_ID_2'],// Follow-up email
+                "brand" => $_ENV['YOUR_COURIER_BRAND_ID'],
                 "data" => [
                     "name" => "Max Overdrive",
                 ]
