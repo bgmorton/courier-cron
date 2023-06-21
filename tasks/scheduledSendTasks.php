@@ -18,7 +18,7 @@ $courier = new CourierClient($_ENV['COURIER_BASE_URL'], $_ENV['COURIER_AUTHORIZA
 $task = $schedule->run(function () use ($courier) {
 
     // For real-world usage, we would probably do something here like pulling a list of new appointments from a database,
-    // and then scheduling notifications to the recipient that their appointment is coming up, do be delivered the day before.
+    // and then scheduling notifications to the recipient that their appointment is coming up, to be delivered the day before.
 
     // Send notification using the Courier PHP SDK
     $notification = (object) [
@@ -29,7 +29,7 @@ $task = $schedule->run(function () use ($courier) {
                 ],
                 "email" => $_ENV['TEST_EMAIL_TO']
             ],
-            "template" => $_ENV['TEST_SCHEDULED_SEND_TEMPLATE'],
+            "template" => $_ENV['TEST_DIRECT_SEND_NOTIFICATION_TEMPLATE_ID'],
             "routing" => [
                 "method" => "single",
                 "channels" => ["email"]
