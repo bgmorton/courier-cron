@@ -14,6 +14,10 @@ You can install all of this in your own project by running:
 
     composer require crunzphp/crunz vlucas/phpdotenv trycourier/courier guzzlehttp/guzzle
 
+If you are cloning this repository, run the following to install these dependencies from the included  `coomposer.json` file:
+
+    composer install
+
 Crunz is used for scheduling in this app, and it has its own [extensive documentation](https://github.com/crunzphp/crunz). The most important bit is adding it to the [crontab](https://man7.org/linux/man-pages/man5/crontab.5.html) on your server - once this is done, all task handling is handled from within your PHP app, no need to add additional cron jobs:
 
     * * * * * cd /path/to/project && vendor/bin/crunz schedule:run
