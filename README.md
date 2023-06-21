@@ -22,9 +22,23 @@ Crunz is used for scheduling in this app, and it has its own [extensive document
 
 Crunz tasks must be created in the `./tasks` directory, and end with `Tasks.php`. 
 
+Crunz requires a configuration file be present, containing a configured timezone. Create this by running:
+
+    vendor/bin/crunz publish:config
+
 You can confirm tasks are present by running:
 
     vendor/bin/crunz schedule:list
+
+This will output a table containing your scheduled tasks:
+
+    +---+------------------------------+-------------+-----------------+
+    | # | Task                         | Expression  | Command to Run  |
+    +---+------------------------------+-------------+-----------------+
+    | 1 | Sending scheduled email      | 30 13 1 6 * | object(Closure) |
+    | 2 | Sending recurring email      | 30 13 * * * | object(Closure) |
+    | 3 | Sending scheduled automation | 30 13 1 6 * | object(Closure) |
+    +---+------------------------------+-------------+-----------------+
 
 For testing, you can force all tasks to run immediately:
 
@@ -43,3 +57,7 @@ The credentials for Courier must be supplied in the `.env` file which can be cre
 ...and then filling out the require details.
 
 The following must also be configured on the Courier Side: [Templates, Recipients, and Brands](https://www.courier.com/docs/getting-started/courier-concepts/). Each of these will have their own unique ID which is used by the Courier SDK and can should be added to the `.env` file.
+
+## Using Laravel?
+
+There's no need to use Crunz if you're using Laravel - [it already has scheduling built in](https://laravel.com/docs/10.x/scheduling).
