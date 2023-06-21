@@ -25,17 +25,16 @@ $task = $schedule->run(function () use ($courier, $dotenv) {
     // Send notification using the Courier PHP SDK
     $notification = (object) [
         "to" => [
-            "data" => [
-                "name" => "Max Overdrive"
-            ],
             "email" => $dotenv['TEST_EMAIL_TO']
         ],
         "template" => $dotenv['TEST_DIRECT_SEND_NOTIFICATION_TEMPLATE_ID'],
         "routing" => [
             "method" => "single",
             "channels" => ["email"]
+        ],
+        "data" => [
+            "name" => "Max Overdrive"
         ]
-
     ];
     $result = $courier->sendEnhancedNotification($notification);
 });
